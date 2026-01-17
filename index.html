@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Ragnar Teiwaz — Academia de Artes Marciales</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@100;300;400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              crimson: '#9e0b0f',
+              deepBlack: '#050505',
+              slateMatte: '#121212',
+            },
+            fontFamily: {
+              archivo: ['Archivo Black', 'sans-serif'],
+              outfit: ['Outfit', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Reset base para botones personalizados */
+      .custom-btn {
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+      }
+      
+      * {
+        -webkit-tap-highlight-color: transparent !important;
+      }
+      .grain-overlay {
+        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVMio5LxXLXonq1TdYaE9EbnEgIkaBlrR2i3J-CrYLvduwGqLz75YIa8yhiOTdvFbBcXETS3rxDjByJ9-2tNkuVDIzfOtJJ9k8eN93BNeIic3CyzyCr8ECS2CuQEMP0ayDCP7PQepADjF4wjhN7nYsg2tjPK9gNM1TuGBPbRVD2EWZE14azmviyONpD68Rv6FP_sgnIk2ukwN-h10OxRuRNDMNFIQwigL8C5kApbW-k9MbyUm741TqUPeCf2UZinSOr-aFLKYqQwPQ');
+        opacity: 0.04;
+        pointer-events: none;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .heading-wide {
+        font-family: 'Archivo Black', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      body {
+        background-color: #050505;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        touch-action: manipulation;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #9e0b0f;
+        border-radius: 10px;
+      }
+      @media (max-width: 640px) {
+        .heading-wide {
+          letter-spacing: -0.04em;
+        }
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+  </head>
+  <body class="bg-deepBlack">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+    <script>
+      document.addEventListener("click", function (e) {
+        const el = e.target.closest("a[href^='#']");
+        if (!el) return;
+        e.preventDefault();
+        const target = document.querySelector(el.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    </script>
+  </body>
+</html>
